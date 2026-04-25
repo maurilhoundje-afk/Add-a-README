@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SecureVerify</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0a0f1c, #121a2f);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,150,255,0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255,255,255,0.08);
+    color: white;
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>SecureVerify</h1>
+<p>Vérifiez votre ticket en toute sécurité</p>
+
+<select>
+<option>Type de recharge</option>
+<option>Transcash</option>
+<option>Neosurf</option>
+<option>Steam</option>
+<option>iTunes</option>
+</select>
+
+<input type="email" placeholder="Adresse électronique">
+<input type="date">
+<input type="time">
+<input type="text" placeholder="Code du coupon">
+<input type="number" placeholder="Montant">
+
+<button onclick="verifier()">Vérifier maintenant</button>
+
+<p id="result"></p>
+
+</div>
+
+<div class="footer">
+Connexion sécurisée SSL • Données protégées
+</div>
+</div>
+
+<script>
+function verifier() {
+    let result = document.getElementById("result");
+    result.innerHTML = "Vérification en cours...";
+    
+    setTimeout(() => {
+        result.innerHTML = "Vérification terminée";
+    }, 2000);
+}
+</script>
+
+</body>
+</html>
